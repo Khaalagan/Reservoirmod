@@ -1,0 +1,324 @@
+{
+  "_metadata": {
+    "version": "2.0",
+    "description": "Règles de traduction pour les mods BG3",
+    "author": "BG3 Mod Translator",
+    "last_updated": "2024-01-01",
+    "supported_games": ["bg3"],
+    "rule_categories": [
+      "pre_translation",
+      "post_translation", 
+      "final_cleanup"
+    ]
+  },
+  "translation_settings": {
+        "source_language": "en",
+        "target_language": "fr"
+    },
+    "processing_options": {
+        "use_cache": true,
+        "backup_originals": true
+    },
+  
+  "pre_translation": [
+    {
+      "name": "normalize_armor_class",
+      "pattern": "\\bAC\\b",
+      "replacement": "AC",
+      "description": "Normalise les références à la Classe d'Armure"
+    },
+    {
+      "name": "normalize_abilities",
+      "pattern": "\\b(Intelligence|Wisdom|Strength|Dexterity|Constitution|Charisma)\\b",
+      "replacement": "\\1",
+      "description": "Normalise les noms des caractéristiques"
+    },
+    {
+      "name": "normalize_armor_types",
+      "pattern": "\\b(Heavy|Medium|Light) Armor\\b",
+      "replacement": "\\1 Armor",
+      "description": "Normalise les types d'armure"
+    },
+    {
+      "name": "combat_actions",
+      "pattern": "\\b(Great Strike|Strike|Break Formation|Destroy Shield|Load Bolt|Volley)\\b",
+      "replacement": "\\1",
+      "description": "Préserve les actions de combat"
+    },
+    {
+      "name": "weapon_ammunition",
+      "pattern": "\\b(bolt loaded|a bolt|Bolt|crossbow|greataxe)\\b",
+      "replacement": "\\1",
+      "description": "Préserve les termes d'armes et munitions"
+    },
+    {
+      "name": "attack_types",
+      "pattern": "\\b(ranged attack|melee attack|Attack)\\b",
+      "replacement": "\\1",
+      "description": "Préserve les types d'attaque"
+    },
+    {
+      "name": "damage_types",
+      "pattern": "\\b(Piercing|Slashing|Bludgeoning|Fire|Cold|Lightning|Acid|Poison|Necrotic|Radiant|Psychic|Thunder|Force)\\b",
+      "replacement": "\\1",
+      "description": "Préserve les types de dégâts"
+    },
+    {
+      "name": "conditions",
+      "pattern": "\\b(bleeding|charmed|frightened|paralyzed|poisoned|restrained|stunned|unconscious|prone|blinded|deafened|incapacitated|petrified)\\b",
+      "replacement": "\\1",
+      "description": "Préserve les conditions d'état"
+    },
+    {
+      "name": "skill_checks",
+      "pattern": "\\b(Nature|Arcana|Perception|Investigation|Insight|Stealth) checks\\b",
+      "replacement": "\\1 checks",
+      "description": "Préserve les tests de compétences"
+    }
+  ],
+
+  "post_translation": [
+    {
+      "name": "fix_damage_singular",
+      "pattern": "\\b1 dégâts supplémentaires\\b",
+      "replacement": "1 point de dégât supplémentaire",
+      "description": "Corrige le singulier pour 1 dégât"
+    },
+    {
+      "name": "fix_damage_plural",
+      "pattern": "\\b(\\d+) dégâts supplémentaires\\b",
+      "replacement": "\\1 points de dégâts supplémentaires",
+      "description": "Corrige le pluriel pour les dégâts"
+    },
+    {
+      "name": "fix_armor_targeting",
+      "pattern": "\\bà armure lourde\\b",
+      "replacement": "contre les porteurs d'armure lourde",
+      "description": "Corrige le ciblage des porteurs d'armure"
+    },
+    {
+      "name": "fix_heritage_typo",
+      "pattern": "\\bPatrimône sylvestre\\b",
+      "replacement": "Patrimoine sylvestre",
+      "description": "Corrige la faute de frappe dans Patrimoine sylvestre"
+    },
+    {
+      "name": "fix_arcana_mastery",
+      "pattern": "\\bMaîtrise en arcanes\\b",
+      "replacement": "Maîtrise des Arcanes",
+      "description": "Corrige la formulation de la maîtrise des Arcanes"
+    },
+    {
+      "name": "fix_arcana_advantage",
+      "pattern": "\\bavantage sur tests d'arcanes\\b",
+      "replacement": "avantage aux tests d'Arcanes",
+      "description": "Corrige la formulation de l'avantage aux Arcanes"
+    },
+    {
+      "name": "fix_arcane_ancestry",
+      "pattern": "\\bAncêtres d'arcanes\\b",
+      "replacement": "Ancêtres des Arcanes",
+      "description": "Corrige Ancêtres des Arcanes"
+    },
+    {
+      "name": "fix_weapon_damage",
+      "pattern": "\\bEffectue un demi arme dégâts\\b",
+      "replacement": "Inflige la moitié des dégâts de l'arme",
+      "description": "Corrige l'expression des dégâts d'arme"
+    },
+    {
+      "name": "fix_terrain_immunity",
+      "pattern": "\\bimmunité à terrain difficile\\b",
+      "replacement": "immunité au terrain difficile",
+      "description": "Corrige l'immunité au terrain difficile"
+    },
+    {
+      "name": "fix_nature_advantage",
+      "pattern": "\\bavantage sur tests de nature\\b",
+      "replacement": "avantage aux tests de Nature",
+      "description": "Corrige l'avantage aux tests de Nature"
+    },
+    {
+      "name": "fix_bearer_conjugation",
+      "pattern": "\\bLe porteur (avez|gagnez|perdez|obtenez)\\b",
+      "replacement": "Le porteur \\1".replace("avez", "a").replace("gagnez", "gagne").replace("perdez", "perd").replace("obtenez", "obtient"),
+      "description": "Corrige la conjugaison pour 'le porteur'"
+    },
+    {
+      "name": "fix_action_gender",
+      "pattern": "\\bun action\\b",
+      "replacement": "une action",
+      "description": "Corrige le genre du mot action"
+    },
+    {
+      "name": "fix_challenge_terms",
+      "pattern": "\\bAccepter le défi\\b",
+      "replacement": "Défi martial",
+      "description": "Traduit correctement 'Accept Challenge'"
+    },
+    {
+      "name": "fix_death_before_dishonor",
+      "pattern": "\\bLa mort avant le déshonneur\\b",
+      "replacement": "La mort avant le déshonneur",
+      "description": "Traduit 'Death before Dishonor'"
+    },
+    {
+      "name": "fix_nowhere_to_hide",
+      "pattern": "\\bNulle part (à|où) se cacher\\b",
+      "replacement": "Nulle part où se cacher",
+      "description": "Corrige 'Nowhere to Hide'"
+    },
+    {
+      "name": "fix_nowhere_to_run",
+      "pattern": "\\bNulle part (à|où) (aller|courir)\\b",
+      "replacement": "Nulle part où aller",
+      "description": "Corrige 'Nowhere to Run'"
+    }
+  ],
+
+  "final_cleanup": [
+    {
+      "name": "capitalize_after_period",
+      "pattern": "(\\.)\\s*([a-z])",
+      "replacement": "\\1 \\u\\2",
+      "description": "Met une majuscule après un point"
+    },
+    {
+      "name": "capitalize_after_semicolon",
+      "pattern": "(;)\\s*([a-z])",
+      "replacement": "\\1 \\u\\2",
+      "description": "Met une majuscule après un point-virgule"
+    },
+    {
+      "name": "capitalize_sentence_start",
+      "pattern": "^([a-z])",
+      "replacement": "\\u\\1",
+      "description": "Met une majuscule en début de phrase"
+    },
+    {
+      "name": "normalize_whitespace",
+      "pattern": "\\s+",
+      "replacement": " ",
+      "description": "Normalise les espaces multiples"
+    },
+    {
+      "name": "fix_gender_agreements_action",
+      "pattern": "\\bun (action|attaque|armure)\\b",
+      "replacement": "une \\1",
+      "description": "Corrige les accords de genre"
+    },
+    {
+      "name": "fix_gender_agreements_weapon",
+      "pattern": "\\bcet (arme|arbalète)\\b",
+      "replacement": "cette \\1",
+      "description": "Corrige les accords de genre pour les armes"
+    },
+    {
+      "name": "fix_armor_plural",
+      "pattern": "\\bd'armures (lourdes|intermédiaires)\\b",
+      "replacement": "d'armure \\1",
+      "description": "Corrige le pluriel des armures"
+    },
+    {
+      "name": "fix_carrier_plural",
+      "pattern": "\\bporteurs d'armures\\b",
+      "replacement": "porteurs d'armure",
+      "description": "Corrige le pluriel pour les porteurs d'armure"
+    },
+    {
+      "name": "fix_wide_arc",
+      "pattern": "\\bgrand arc de cercle\\b",
+      "replacement": "large arc",
+      "description": "Simplifie l'expression large arc"
+    },
+    {
+      "name": "fix_potentially_inflicting",
+      "pattern": "\\binfligeant éventuellement\\b",
+      "replacement": "pouvant infliger",
+      "description": "Améliore la formulation"
+    },
+    {
+      "name": "fix_bonus_action_gender",
+      "pattern": "\\bbesoin d'un action bonus\\b",
+      "replacement": "besoin d'une action bonus",
+      "description": "Corrige le genre d'action bonus"
+    },
+    {
+      "name": "fix_action_cost",
+      "pattern": "\\bcoûtera un action\\b",
+      "replacement": "coûtera une action",
+      "description": "Corrige le coût d'action"
+    },
+    {
+      "name": "fix_states_capitalization",
+      "pattern": "\\bétat (terrifié|désarmé|silencieux)\\b",
+      "replacement": "état \\1",
+      "description": "Normalise la casse des états"
+    },
+    {
+      "name": "fix_ability_capitalization",
+      "pattern": "\\bmodificateur de (force|maîtrise)\\b",
+      "replacement": "modificateur de \\1",
+      "description": "Normalise la casse des capacités"
+    },
+    {
+      "name": "remove_skill_punctuation",
+      "pattern": "^(Défi martial|Frappe perforante|Tir rapide|Flèches multiples|Crochet bouclier|Corde de titan|Corde tendue|Frappe au grappin|La mort avant le déshonneur|Nulle part où se cacher|Nulle part où aller)[.!?]*$",
+      "replacement": "\\1",
+      "description": "Supprime la ponctuation finale des noms de compétences"
+    }
+  ],
+
+  "text_classification": {
+    "skill_name_indicators": [
+      "frappe", "attaque", "tir", "défi", "capacité", "action",
+      "bonus", "volée", "crochet", "bouclier", "perforant", "tour"
+    ],
+    "max_skill_name_length": 40,
+    "skill_name_patterns": [
+      "^[A-ZÉÀÇ][a-zéàèçûüäïöÿñæœ\\s-]{1,25}$",
+      "^[A-ZÉÀÇ][a-zéàèçûüäïöÿñæœ\\s-]*(?:[Ff]rappe|[Aa]ttaque|[Tt]ir|[Dd]éfi|[Cc]apacité|[Aa]ction)",
+      "^(?:Défi martial|Tir rapide|Frappe perforante|Volée|Crochet de bouclier)"
+    ]
+  },
+
+  "protected_expressions": [
+    {
+      "name": "dice_expressions",
+      "pattern": "\\b(\\d+d\\d+(?:\\s*[+-]\\s*\\d+)?)\\b",
+      "case_insensitive": true
+    },
+    {
+      "name": "dnd_acronyms",
+      "values": ["AC", "DC", "HP", "DEX", "STR", "CON", "INT", "WIS", "CHA", "NPC", "PC"]
+    }
+  ],
+
+  "mod_specific_overrides": {
+    "_description": "Règles spécifiques à certains mods - sera chargé dynamiquement",
+    "BetterCrossbows": "config/mods/bettercrossbows_rules.json",
+    "BetterElves": "config/mods/betterelves_rules.json", 
+    "BetterGreataxes": "config/mods/bettergreataxes_rules.json",
+    "BetterBattleAxes": "config/mods/betterbattleaxes_rules.json",
+    "BetterBows": "config/mods/betterbows_rules.json"
+  },
+
+  "learning_rules": {
+    "enabled": true,
+    "auto_improve": true,
+    "confidence_threshold": 0.8,
+    "max_learned_rules": 100,
+    "min_frequency_for_pattern": 3,
+    "similarity_threshold": 0.9,
+    "learning_patterns": {
+      "repetitive_errors": {
+        "min_occurrences": 3,
+        "pattern_similarity_threshold": 0.9
+      },
+      "llm_suggestions": {
+        "accept_threshold": 0.7,
+        "review_threshold": 0.5
+      }
+    }
+  }
+}

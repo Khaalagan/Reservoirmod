@@ -1,0 +1,179 @@
+{
+  "_metadata": {
+    "mod_name": "BetterElves",
+    "version": "1.0",
+    "description": "Règles spécifiques pour le mod BetterElves",
+    "extends": "base_bg3_rules.json"
+  },
+  "pre_translation": [
+    {
+      "name": "protect_woodland_heritage",
+      "pattern": "\\bWoodland Heritage\\b",
+      "replacement": "WOODLAND_HERITAGE",
+      "description": "Protège Patrimoine sylvestre"
+    },
+    {
+      "name": "protect_arcane_ancestry", 
+      "pattern": "\\bArcane Ancestry\\b",
+      "replacement": "ARCANE_ANCESTRY",
+      "description": "Protège Ancêtres des Arcanes"
+    }
+  ],
+  "post_translation": [
+    {
+      "name": "fix_arcana_proficiency",
+      "pattern": "\\bCompétence en arcanes\\b", 
+      "replacement": "Maîtrise des Arcanes",
+      "description": "Corrige la maîtrise des Arcanes"
+    },
+    {
+      "name": "fix_arcana_tests",
+      "pattern": "\\bAvantage sur les tests d'arcanes\\b",
+      "replacement": "Avantage aux tests d'Arcanes", 
+      "description": "Corrige les tests d'Arcanes"
+    }
+  ],
+  "final_cleanup": [
+    {
+      "name": "restore_woodland_heritage",
+      "pattern": "\\bWOODLAND_HERITAGE\\b",
+      "replacement": "Patrimoine sylvestre",
+      "description": "Restaure Patrimoine sylvestre"
+    },
+    {
+      "name": "restore_arcane_ancestry",
+      "pattern": "\\bARCANE_ANCESTRY\\b", 
+      "replacement": "Ancêtres des Arcanes",
+      "description": "Restaure Ancêtres des Arcanes"
+    }
+  ]
+}
+
+---
+
+{
+  "_metadata": {
+    "mod_name": "BetterGreataxes",
+    "version": "1.0", 
+    "description": "Règles spécifiques pour le mod BetterGreataxes",
+    "extends": "base_bg3_rules.json"
+  },
+  "post_translation": [
+    {
+      "name": "fix_bleeding_condition",
+      "pattern": "\\bhémorragie\\b",
+      "replacement": "saignement",
+      "description": "Utilise 'saignement' plutôt qu'hémorragie"
+    },
+    {
+      "name": "fix_fear_infliction", 
+      "pattern": "\\binfliger la peur\\b",
+      "replacement": "infliger l'état Terrifié",
+      "description": "Corrige l'infliction de peur"
+    },
+    {
+      "name": "fix_prone_condition",
+      "pattern": "\\bperte d'équilibre\\b",
+      "replacement": "état À terre",
+      "description": "Corrige la condition À terre"
+    }
+  ]
+}
+
+---
+
+{
+  "_metadata": {
+    "mod_name": "BetterBattleAxes", 
+    "version": "1.0",
+    "description": "Règles spécifiques pour le mod BetterBattleAxes",
+    "extends": "base_bg3_rules.json"
+  },
+  "post_translation": [
+    {
+      "name": "fix_hook_strike",
+      "pattern": "\\bFrappe de crochet\\b",
+      "replacement": "Frappe au grappin",
+      "description": "Traduit Hook Strike"
+    },
+    {
+      "name": "fix_shield_hook",
+      "pattern": "\\bCrochet de bouclier\\b",
+      "replacement": "Crochet bouclier", 
+      "description": "Traduit Shield Hook"
+    },
+    {
+      "name": "fix_spike_strike",
+      "pattern": "\\bFrappe à pointes\\b",
+      "replacement": "Frappe perforante",
+      "description": "Traduit Spike Strike"
+    },
+    {
+      "name": "fix_silenced_state",
+      "pattern": "\\bau silence\\b",
+      "replacement": "par l'état Silencieux", 
+      "description": "Corrige l'état Silencieux"
+    },
+    {
+      "name": "fix_movement_prevention",
+      "pattern": "\\bvous empêchant tous (les )?deux de (bouger|vous déplacer)\\b",
+      "replacement": "vous empêchant tous deux de vous déplacer",
+      "description": "Corrige l'empêchement de mouvement"
+    }
+  ]
+}
+
+---
+
+{
+  "_metadata": {
+    "mod_name": "BetterBows",
+    "version": "1.0",
+    "description": "Règles spécifiques pour le mod BetterBows", 
+    "extends": "base_bg3_rules.json"
+  },
+  "post_translation": [
+    {
+      "name": "fix_rapid_fire",
+      "pattern": "\\bTir rapide\\b",
+      "replacement": "Tir rapide",
+      "description": "Traduit Rapid Fire"
+    },
+    {
+      "name": "fix_multi_shot", 
+      "pattern": "\\bFlèches multiples\\b",
+      "replacement": "Volée", 
+      "description": "Traduit Multi Shot comme Volée"
+    },
+    {
+      "name": "fix_titan_string",
+      "pattern": "\\bCorde de titan\\b",
+      "replacement": "Corde de titan",
+      "description": "Traduit Titan String"
+    },
+    {
+      "name": "fix_taut_string",
+      "pattern": "\\bCorde tendue\\b", 
+      "replacement": "Corde tendue",
+      "description": "Traduit Taut String"
+    },
+    {
+      "name": "fix_two_shots",
+      "pattern": "\\b(Effectuez|Faire) deux tirs\\b",
+      "replacement": "Effectuer deux tirs",
+      "description": "Normalise 'effectuer deux tirs'"
+    },
+    {
+      "name": "fix_attack_penalty",
+      "pattern": "\\bpénalité de -(\\d+) (à l'|au jet d')attaque\\b",
+      "replacement": "pénalité de -\\1 au jet d'attaque", 
+      "description": "Normalise les pénalités d'attaque"
+    },
+    {
+      "name": "fix_strength_modifier",
+      "pattern": "\\bmodificateur de force\\b",
+      "replacement": "modificateur de Force",
+      "description": "Met Force avec majuscule"
+    }
+  ]
+}
